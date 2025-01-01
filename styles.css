@@ -1,0 +1,61 @@
+.zigzag-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #77BEFF;
+    padding-bottom: 5px;
+    /* Ensures there's space at the bottom */
+    background-image: url('../Vector 1 (1).png');
+    background-position: bottom;
+    background-size: 100% 3px;
+    /* Adjust the height of the bottom border */
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease-in-out;
+}
+
+.zigzag-link:hover {
+    background-size: 100% 100%;
+    /* Expand the background to fill the width on hover */
+}
+
+.nav-item a i {
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+@keyframes spin-slow {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Apply the animation to the class */
+.animate-spin-slow {
+    animation: spin-slow 10s linear infinite;
+    height: 1rem;
+}
+
+h1 {
+    font-family: "Russo One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@keyframes spin-slow {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+
+.animate-spin-slow {
+animation: spin-slow 10s linear infinite;
+}

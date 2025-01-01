@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinate </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="/infinate/styles.css">
+
+</head>
+
+<body class="bg-black">
+    <div class="border-b border-[#1a1a1a] py-4">
+        <nav class="flex w-5/6 mx-auto items-center justify-between px-4 py-3 bg-black text-white">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold">Logo</a>
+            </div>
+
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="nav-item">Home <i class="fa-solid fa-chevron-down"></i></a>
+                <a href="#" class="hover:text-[#77BEFF]">About <i class="fa-solid fa-chevron-down"></i></a>
+                <a href="#" class="hover:text-[#77BEFF]">Services <i class="fa-solid fa-chevron-down"></i></a>
+                <a href="#" class="hover:text-[#77BEFF]">Contact <i class="fa-solid fa-chevron-down"></i></a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white space-y-2 px-4 py-2">
+        <a href="#" class="block hover:text-gray-300">Home</a>
+        <a href="#" class="block hover:text-gray-300">About</a>
+        <a href="#" class="block hover:text-gray-300">Services</a>
+        <a href="#" class="block hover:text-gray-300">Contact</a>
+    </div>
+
+    <section class="container mx-auto text-white text-center py-12 ">
+        <div class="flex flex-wrap items-center justify-center mx-auto">
+            <!-- Left Column: Animated Image -->
+            <div class="w-full lg:w-1/2 p-6 flex justify-center">
+                <img src="/infinate/banner-shape-01.png" 
+                    alt="Vector Image" 
+                    class="w-3/4 lg:w-[60%] h-auto animate-spin-slow rounded-full shadow-lg">
+            </div>
+    
+            <!-- Right Column: Text -->
+            <div class="w-full lg:w-1/2 p-6 text-center lg:text-left">
+                <h1 class="text-4xl lg:text-6xl font-bold mb-4 leading-tight animate-fade-in">
+                    Creative Solutions, <span class="text-4xl lg:text-6xl font-bold mb-4 leading-tight animate-fade-in">Real Results</span>
+                </h1>
+             
+            </div>
+        </div>
+    </section>
+    
+    <script src="/script.js"></script>
+</body>
+
+</html>
