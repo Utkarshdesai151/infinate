@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
   font-family: "Jost", sans-serif;
     font-weight: normal;
@@ -82,13 +81,11 @@ body{
   display: flex;
   align-items: center; /* Center actions vertically */
 }
-
 .action-hamburger {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .hamburger img {
   width: 50px;
   height: 50px;
@@ -97,107 +94,18 @@ body{
   align-items: center;
   justify-content: center;
 }
-
-.mega-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: -20px;
-  background-color: #212121;
-  padding: 15px ;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  min-width: 230px;
-  padding-left: 2rem;
-}
-
-.nav-link a{
-  padding: 8px ;
-}
-
-
-
-.mega-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: block;
-  gap: 15px;
-}
-
-.mega-menu li {
-  margin-bottom: 0.5rem;
-  position: relative;
-}
-
-.mega-menu li:hover {
-  color: #77BEFF;
-  margin-bottom: 0.5rem;
-  position: relative;
-}
-
-
-.mega-menu a {
-  text-decoration: none;
-  color: #ffffff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-.mega-menu ul li a:hover {
-  color: #2563ad;
-}
-
-
-/* 
-.mega-menu-pages ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-} */
-
-.mega-menu ul li {
- 
-}
-/* 
-.mega-menu-pages ul li a {
-  color: #333;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s;
-} */
-
-.mega-menu ul li a:hover {
-  color: #2563ad;
-}
-
-.nav-item:hover .mega-menu {
-  color: #2563ad;
-  display: block;
-}
-
-/* .nav-item:hover .mega-menu-pages {
-  display: block;
-} */
-
-
-/* footer */
-
 .site-footer {
   background-color: #000000;
   position: relative;
   z-index: 9;
 }
-
 .widget .widget-title {
   margin-bottom: 40px;
   line-height: 34px;
 }
-
 .weight-tittle {
   color: #ffffff;
 }
-
 .widget ul.address-info-list {
   list-style-type: none;
   padding: 0;
@@ -207,12 +115,10 @@ ul li {
   list-style: none;
 }
 /* Footer Styles */
-
 .site-footer .footer-main .row {
   display: flex;
   gap: 20px;
 }
-
 .weight-title,
 .newsletter-title,
 .social-title {
@@ -240,7 +146,6 @@ ul li {
   width: 40px;
   height: 40px;
 }
-
 .address-info-list .info {
   font-size: 16px;
   line-height: 1.5;
@@ -252,7 +157,6 @@ ul li {
     position: relative;
     align-items: center; 
 }
-
 .site-footer.footer-dark .widget-newsletter .newsletter-form .form-control {
     padding: 10px 15px;
     padding-right: 60px; 
@@ -262,13 +166,11 @@ ul li {
     border-radius: 5px; 
     transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
-
 .site-footer.footer-dark .widget-newsletter .newsletter-form .form-control:focus {
     border-color: rgba(255, 255, 255, 0.3);
     outline: none;
     background-color: #121212; 
 }
-
 .subscribe-btn {
     background-color: #ffffff; 
     color: #000000; 
@@ -278,16 +180,13 @@ ul li {
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
-
 .subscribe-btn:hover {
     background-color: #f0f0f0; 
     transform: scale(1.05); 
 }
-
 .subscribe-btn i {
     font-size: 16px; /* Icon size */
 }
-
 .widget-newsletter .newsletter-form .subscribe-btn {
     position: absolute;
     right: 0;
@@ -300,7 +199,6 @@ ul li {
     border: none;
     height: 15px;
 }
-
 .widget-menu ul {
     display: flex;
     gap: 10px 15px;
@@ -382,9 +280,7 @@ ul li {
     padding: 5px 15px; 
 }
 
-
-.footer-container {
-   
+.footer-container {  
     width: 79%;
     margin: auto;
     padding-top: 80px;
@@ -398,7 +294,6 @@ ul li {
     padding-top: 80px;
 }
 
-
 .footer-copyright p {
     font-size: 26px;
 }
@@ -411,6 +306,3 @@ ul li {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
-
-
-
