@@ -1,0 +1,95 @@
+
+.inner-header {
+    position: relative;
+    z-index: 5;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2563ad;
+    background-blend-mode: multiply;
+  }
+  
+  .bg-holder {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+  
+  h1,h2,h3,h4,h5,h6 {
+    font-family: "Russo One", sans-serif;
+    color: #ffffff;
+    margin: 0px 0px 1rem;
+  }
+  
+  h5 {
+    font-size: 26px;
+    line-height: normal;
+  }
+  
+  h4{
+    font-size: 2.5rem;
+  }
+
+  p{
+    color: #ffffff;
+  }
+
+  .p {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    color: #ffffff;
+  }
+
+  .ellipse-bottom {
+    background-image: url(../images/bg/ellipse-bottom.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.space-ptb {
+    padding: 150px 0;
+}
+  
+
+.main-section-right-sidebar-page{
+    background-color: black;
+    height: auto;
+    /* padding: 10px; */
+}
+
+.list-wrapper {
+    margin: 1rem 0;
+    padding: 1rem 0.75rem;
+  
+    border-radius: 8px;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .list li {
+    display: flex;
+   
+  }
+  
+  .list img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    transition: transform 0.3s ease;
+    padding-right: 10px;
+  }
+  
+  .list img:hover {
+    transform: scale(1.2);
+  }
+  
