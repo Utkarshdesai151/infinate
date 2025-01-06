@@ -1,3 +1,17 @@
+@import "compass/css3";
+
+
+.circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+  background: white;
+  border-radius: 80%;
+  backface-visibility: hidden;
+}
 *{
     margin: 0;
     padding: 0;
@@ -8,11 +22,12 @@ body{
     font-weight: normal;
     font-style: normal;
     font-size: 18px;
-    color: #D4D6D7;
     overflow-x: hidden;
     background-color: #000000;
 
 }
+
+
 .header {
   display: block;
 }
@@ -158,6 +173,12 @@ ul li {
     outline: none;
     background-color: #121212; 
 }
+
+.site-footer.footer-dark .widget-newsletter .newsletter-form .form-control::placeholder {
+  border-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+  color: #ffffff;
+}
 .subscribe-btn {
     background-color: #ffffff; 
     color: #000000; 
@@ -272,11 +293,46 @@ ul li {
 .footer-copyright p {
     font-size: 26px;
 }
-.footer-copyright a{
-   font-weight: 600;
-   text-decoration: none;
-   color: #77BEFF;
-   background-image: linear-gradient(60deg, #3663D8 -20%, #77BEFF 100%); 
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+
+.widget-search .search .form-control {
+  padding: 20px 40px 20px 0px;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  font-size: 24px;
+  line-height: 24px;
+  color: #ffffff;
 }
+
+.widget-search .search .form-control::placeholder {
+  color: #ffffff; 
+  opacity: 1; 
+}
+
+
+.circle {
+  
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translateX(-30px) translateY(-30px);
+  pointer-events: none;
+  z-index: 9999;
+  -webkit-transition: opacity .6s ease-in-out;
+  transition: opacity .6s ease-in-out;
+  background: transparent; 
+}
+
+.circle img {
+  position: fixed;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: 600ms all cubic-bezier(.23, 1, .32, 1);
+  transition: 600ms all cubic-bezier(.23, 1, .32, 1);
+  width: 100%;
+  height: auto;
+}
+
