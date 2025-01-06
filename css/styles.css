@@ -1,6 +1,4 @@
 @import "compass/css3";
-
-
 .circle {
   position: absolute;
   width: 50px;
@@ -26,8 +24,6 @@ body{
     background-color: #000000;
 
 }
-
-
 .header {
   display: block;
 }
@@ -76,7 +72,6 @@ body{
   position: relative;
   text-decoration: none;
 }
-
 .nav-item {
   display: flex;
   align-items: center;
@@ -173,7 +168,6 @@ ul li {
     outline: none;
     background-color: #121212; 
 }
-
 .site-footer.footer-dark .widget-newsletter .newsletter-form .form-control::placeholder {
   border-color: rgba(255, 255, 255, 0.3);
   outline: none;
@@ -293,7 +287,6 @@ ul li {
 .footer-copyright p {
     font-size: 26px;
 }
-
 .widget-search .search .form-control {
   padding: 20px 40px 20px 0px;
   border: none;
@@ -305,15 +298,11 @@ ul li {
   line-height: 24px;
   color: #ffffff;
 }
-
 .widget-search .search .form-control::placeholder {
   color: #ffffff; 
   opacity: 1; 
 }
-
-
-.circle {
-  
+.circle { 
   position: absolute;
   top: 0px;
   left: 0px;
@@ -324,7 +313,6 @@ ul li {
   transition: opacity .6s ease-in-out;
   background: transparent; 
 }
-
 .circle img {
   position: fixed;
   -webkit-transform: rotate(-90deg);
@@ -335,4 +323,3 @@ ul li {
   width: 100%;
   height: auto;
 }
-
