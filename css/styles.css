@@ -395,7 +395,6 @@ li {
 .section-title {
   margin-bottom: 50px;
 }
-
 .section-title .sub-title {
   display: flex;
   gap: 10px;
@@ -455,11 +454,9 @@ li {
   margin: auto;
   width: 90%;
 }
-
 .parent-div {
   position: absolute;
 }
-
 .child-div {
   position: relative;
   z-index: 1;
@@ -468,7 +465,6 @@ li {
   padding-top: 23px;
   padding-left: 17px;
 }
-
 .img-fluid {
   border-radius: 10px;
 }
@@ -478,7 +474,6 @@ span {
 .section-title {
   margin-bottom: 50px;
 }
-
 .section-title .sub-title {
   display: flex;
   gap: 10px;
@@ -513,11 +508,9 @@ span {
 .col-8 {
   padding-left: 39px;
 }
-
 .skill-div {
   display: flex;
 }
-
 .pl25 {
   padding-left: 29rem;
   color: aliceblue;
@@ -525,7 +518,6 @@ span {
 .pl25 span {
   color: white;
 }
-
 .rated-reviews h6 span {
   margin: 0px;
   font-size: 18px;
@@ -534,7 +526,6 @@ span {
   color: #d4d6d7;
   margin-left: 4rem;
 }
-
 .ml-3 {
   margin-left: 3rem;
 }
@@ -544,18 +535,14 @@ span {
   position: relative;
   padding: 10px 0;
 }
-
 .slider-track {
   display: flex;
-  width: max-content; /* Auto width based on content */
+  width: max-content; 
   animation: scroll 10s linear infinite;
   gap: 20px;
   white-space: nowrap;
   padding-top: 21px;
 }
-
-/* Pause animation on hover */
-
 .slide {
   flex: 0 0 auto;
   width: 280px;
@@ -568,13 +555,9 @@ span {
   transition: transform 10s ease-in-out;
   padding-left: 1px;
 }
-
-/* Hover effect for slides */
 .slide:hover {
   transform: scale(1.1);
 }
-
-/* Keyframe animation for scrolling */
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -583,15 +566,12 @@ span {
     transform: translateX(-100%);
   }
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .slide {
-    width: 200px; /* Smaller cards on mobile */
+    width: 200px; 
     margin: 0 5px;
   }
 }
-
 @media (max-width: 480px) {
   .slide {
     width: 150px;
@@ -599,11 +579,9 @@ span {
     padding: 8px;
   }
 }
-
 .transform{
   transform: rotate(2.2deg);
 }
-/* Stylish Bordered Text Effect */
 .bordered-text-effect {
   font-family: "Russo One", sans-serif;
   font-size: 42px;
@@ -613,8 +591,6 @@ span {
   padding-left: 278px;
   padding-right: 68px;
 }
-
-/* Hover effect on text */
 .bordered-text-effect:hover {
   color: white;
   padding-left: 278px;
@@ -622,50 +598,41 @@ span {
 }.transform {
   transform: rotate(2.2deg);
 }
-
-/* Stylish Bordered Text Effect */
 .bordered-text-effect {
   font-family: "Russo One", sans-serif;
-  font-size: clamp(24px, 5vw, 42px); /* Responsive font size */
+  font-size: clamp(24px, 5vw, 42px); 
   line-height: normal;
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-  padding-left: 15vw; /* Responsive padding */
+  padding-left: 15vw; 
   padding-right: 5vw;
   text-align: center;
 }
-
-/* Hover effect on text */
 .bordered-text-effect:hover {
   color: white;
 }
-
 .transform {
   transform: rotate(0.7deg);
 }
-
 .double-border {
   transform: rotate(4.2deg);
-  border: 1px solid white;
+  border: 1px solid rgb(73, 73, 73);
   height: 6px;
   padding-bottom: 1px;
   width: fit-content;
-  margin-top: 10vh; /* Responsive margin */
+  margin-top: 10vh;
+  border-bottom: 1px solid rgb(73, 73, 73);
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .bordered-text-effect {
     font-size: 24px;
     padding-left: 10vw;
     padding-right: 3vw;
   }
-
   .double-border {
-    margin-top: 5vh;
+    margin-top:186px;
   }
 }
-
 @media (max-width: 480px) {
   .bordered-text-effect {
     font-size: 20px;
