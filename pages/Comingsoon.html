@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="IT Infinite - IT Solutions and Services Company HTML5 Template">
+    <meta name="author" content="potenzaglobalsolutions.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IT Infinite - IT Solutions and Services Company HTML5 Template</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/swiper/swiper.min.css">
+    <link rel="stylesheet" href="css/magnific-popup/magnific-popup.css">
+
+    <link rel="stylesheet" href="/infinate/css/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div id="cursor">
+        <div class="cursor__circle"></div>
+    </div>
+
+    <div id="page" class="main">
+
+        <div class="site-content">
+            <section class="coming-soon-section bg-holder"
+                style="background-image: url(/infinate/Assets/comingsoon/coming-soon.jpg);">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 text-center">
+                            <div class="inner-content">
+                                <a href="index.html"><img class="logo" src="/infinate/Assets/Footer/logo (1).svg" alt="#"></a>
+                                <span class="coming-soon-title">Coming Soon</span>
+                                <div class="countdown-wrapper countdown-light">
+                                    <div class="countdown">
+                                        <span class="days">00</span>
+                                        <p class="days_ref">Days</p>
+                                    </div>
+                                    <div class="countdown">
+                                        <span class="hours">00</span>
+                                        <p class="hours_ref">Hours</p>
+                                    </div>
+                                    <div class="countdown">
+                                        <span class="minutes">00</span>
+                                        <p class="minutes_ref">Minutes</p>
+                                    </div>
+                                    <div class="countdown">
+                                        <span class="seconds">00</span>
+                                        <p class="seconds_ref">Seconds</p>
+                                    </div>
+                                </div>
+                                <p class="coming-soon-description">The sad thing is the majority of people have no clue
+                                    about what they truly want. They have no clarity. When asked the question, responses
+                                    will be superficial at best, and at worst, will be what someone else wants for them.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <div class="back-to-top">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+
+    </div>
+    <script>
+      function countdownTimerFunction() {
+  const targetDate = new Date('09/14/2025 12:00:00').getTime();
+  const offset = -4 * 60 * 60 * 1000; 
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const adjustedTime = now + offset;
+    const distance = targetDate - adjustedTime;
+
+    if (distance < 0) {
+      document.querySelector(".coming-soon-title").textContent = "We're Live!";
+      return;
+    }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.querySelector(".countdown .days").textContent = days.toString().padStart(2, '0');
+    document.querySelector(".countdown .hours").textContent = hours.toString().padStart(2, '0');
+    document.querySelector(".countdown .minutes").textContent = minutes.toString().padStart(2, '0');
+    document.querySelector(".countdown .seconds").textContent = seconds.toString().padStart(2, '0');
+  }
+  updateTimer();
+  setInterval(updateTimer, 1000); 
+}
+countdownTimerFunction();
+    </script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+   
+</body>
+
+</html>
