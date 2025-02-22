@@ -5,30 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/infinate/css/styles.css">
-    <link rel="stylesheet" href="/infinate/css/styles.css" />
     <link rel="shortcut icon" href="images/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/infinate/css/styles.css">
-    <link rel="stylesheet" href="/infinate/css/home-page-1.css">
-    <link rel="stylesheet" href="/infinate/css/main.css">
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 
 </head>
 
 <body>
+  <div id="cursor">
+    <div class="cursor__circle"></div>
+  </div>
   <header class="header header-default header-sticky">
     <div class="header-inner">
       <div class="site-logo">
-        <a class="navbar-brand" href="index.html"><img class="img-fluid" src="/infinate/Assets/Footer/logo (1).svg" alt="logo" /></a>
+        <a class="navbar-brand" href="index.html"><img class="img-fluid" src="../Assets/Footer/logo (1).svg" alt="logo" /></a>
       </div>
       <div class="site-menu d-none d-xl-block">
         <ul class="main-menu">
@@ -205,7 +204,7 @@
 
 
         <div class="inner-header bg-holder"
-            style="background-image: url(/infinate/Assets/pagerightsidebar/page-header-01.jpg);">
+            style="background-image: url(../Assets/pagerightsidebar/page-header-01.jpg);">
             <div class="container">
                 <div class="row  justify-content-center">
                     <div class="col-md-12 text-center">
@@ -227,7 +226,7 @@
                              <span class="error-text">404</span>
                              <span class="bg-text-stroke">404</span>
                           </h1>
-                         <img class="smile-icon" src="/infinate/Assets/error/smile-icon.svg" alt="#">
+                         <img class="smile-icon" src="../Assets/error/smile-icon.svg" alt="#">
                         </div>
                         <h3 class="sub-title">Oops! Page Not Found</h3>
                         <p class="description mb-5">The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
@@ -263,15 +262,15 @@
                             <h5 class="widget-title">Where To Find Us</h5>
                             <ul class="address-info-list">
                                 <li><i class="icon"><img class="img-fluid"
-                                            src="/infinate/Assets/Addressinfo/address-info-contacts.svg"
+                                            src="../Assets/Addressinfo/address-info-contacts.svg"
                                             alt="" /></i><span class="info"><span>17504 Carlton Cuevas Rd
                                         </span>Gulfport, MS, 39503</span></li>
                                 <li><i class="icon"><img class="img-fluid"
-                                            src="/infinate/Assets/Addressinfo/address-info-headphone.svg"
+                                            src="../Assets/Addressinfo/address-info-headphone.svg"
                                             alt="" /></i><span class="info"><span>001123456789 </span>Mon-fri 8:30am
                                         6:30pm</span></li>
                                 <li><i class="icon"><img class="img-fluid"
-                                            src="/infinate/Assets/Addressinfo/address-info-email.svg" alt="" /></i><span
+                                            src="../Assets/Addressinfo/address-info-email.svg" alt="" /></i><span
                                         class="info"><span>Info@example.com </span>24x7 online support</span></li>
                             </ul>
                         </div>
@@ -326,7 +325,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <p><a class="footer-logo" href="index.html"><img class="img-fluid"
-                                    src="/infinate/Assets/Footer/logo (1).svg" alt="logo" /></a></p>
+                                    src="../Assets/Footer/logo (1).svg" alt="logo" /></a></p>
                     </div>
                     <div class="col-lg-6 text-lg-end">
                         <p>Develop and design by <a href="#">Utkarsh</a></p>
@@ -335,9 +334,6 @@
             </div>
         </div>
     </footer>
-
-    <!--=================================
-      Back To Top -->
     <div class="back-to-top">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
@@ -346,11 +342,10 @@
 
     </div>
 
-    <script>
-
-        
-
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="../js/effects.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
