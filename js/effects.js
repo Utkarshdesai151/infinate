@@ -242,21 +242,3 @@ $(document).ready(function () {
         }
     });
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-    const accordionButtons = document.querySelectorAll(".accordion-button");
-    accordionButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            const target = document.querySelector(this.getAttribute("data-target"));
-
-            const allCollapses = document.querySelectorAll(".accordion-collapse");
-            allCollapses.forEach(collapse => {
-                if (collapse !== target) {
-                    collapse.classList.remove("show");
-                }
-            });
-            target.classList.toggle("show");
-            this.classList.toggle("collapsed");
-        });
-    });
-});
