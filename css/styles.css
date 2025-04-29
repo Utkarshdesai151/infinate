@@ -6336,7 +6336,6 @@ form.form-dark .form-control:focus {
   position: absolute;
   right: 98px;
 }
-
 /*-----------------------------------*/
 /* Main Banner 2 */
 /*-----------------------------------*/
@@ -9542,6 +9541,8 @@ form.form-dark .form-control:focus {
     }
   }
   
+  /* case studies */
+  
   .case-info-section {
     padding: 50px 0px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -9588,7 +9589,9 @@ form.form-dark .form-control:focus {
     display: flex;
     gap: 30px;
     padding: 0 30px;
+    width: 100%;
   }
+  
   
   .case-study-fancy-wrapper .case-studies-wrapper.case-studies-style-1 {
     flex: 1;
@@ -9603,32 +9606,50 @@ form.form-dark .form-control:focus {
   
   .case-study-fancy-wrapper .case-studies-wrapper.case-studies-style-1 .case-studies-img img {
     height: 100%;
-    width: 100%;
+    width: auto;
     background-repeat: no-repeat;
-    transition: 0.5s;
     background-position: center center;
     background-size: cover;
     object-fit: cover;
-  }
+    transition: transform 0.5s ease-in-out; 
+}
+
+.case-study-fancy-wrapper .case-studies-wrapper.case-studies-style-1:hover .case-studies-img img {
+    transform: scale(1.1); 
+}
+
   
   .case-study-fancy-wrapper .case-studies-wrapper.case-studies-style-1 .case-studies-info {
     padding: 40px 50px;
     visibility: hidden;
     opacity: 0;
-    transition: all 0.5s ease-in-out;
-    transition-delay: 250ms;
-    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    z-index: 0;
+    transform: scale(0.95);
+}
+
+
+.case-study-fancy-wrapper .case-studies-wrapper.case-studies-style-1:hover .case-studies-info {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1); 
+}
+
+
+  .case-study-fancy-wrapper .case-studies-wrapper.case-studies-style-1 .case-studies-info:hover{
+    visibility: visible;
+    opacity: 1;
   }
-  
   .case-study-fancy-wrapper .case-studies-wrapper.case-studies-style-1 .case-studies-info .case-studies-info-inner .case-studies-title {
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
   }
   
   .case-study-fancy-wrapper .case-studies-wrapper.case-studies-style-1 .case-studies-info .case-studies-info-inner .case-studies-content {
     margin-bottom: 20px;
-    opacity: 1;
+  
   }
   
+
   .case-study-fancy-wrapper .case-studies-wrapper.case-studies-style-1.active {
     flex: 3.5;
   }
@@ -9816,3 +9837,5 @@ form.form-dark .form-control:focus {
       width: 100%;
     }
   }
+  
+  
