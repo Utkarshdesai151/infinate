@@ -146,43 +146,43 @@ const buttonEffect = () => {
         });
       });
   
-  document.querySelectorAll(".awards-item, .case-studies-item, .blog-style-3").forEach((el) => {
-    let image = el.querySelector('.gsap-img-animation');
-    let activeImage;
-    let setX, setY;
+  // document.querySelectorAll(".awards-item, .case-studies-item, .blog-style-3").forEach((el) => {
+  //   let image = el.querySelector('.gsap-img-animation');
+  //   let activeImage;
+  //   let setX, setY;
   
-    image.style.position = "absolute";
-    image.style.transform = "translate(-50%, -50%)";
-    image.style.opacity = "0"; 
-    const align = (e) => {
-      setX = e.clientX;
-      setY = e.clientY;
-      image.style.left = `${setX}px`;
-      image.style.top = `${setY}px`;
-    };
+  //   image.style.position = "absolute";
+  //   image.style.transform = "translate(-50%, -50%)";
+  //   image.style.opacity = "0"; 
+  //   const align = (e) => {
+  //     setX = e.clientX;
+  //     setY = e.clientY;
+  //     image.style.left = `${setX}px`;
+  //     image.style.top = `${setY}px`;
+  //   };
   
-    const startFollow = () => document.addEventListener("mousemove", align);
+  //   const startFollow = () => document.addEventListener("mousemove", align);
     
-    const stopFollow = () => document.removeEventListener("mousemove", align);
+  //   const stopFollow = () => document.removeEventListener("mousemove", align);
   
-    el.addEventListener('mouseenter', (e) => {
-      image.style.opacity = "1"; // Show image
-      startFollow();
+  //   el.addEventListener('mouseenter', (e) => {
+  //     image.style.opacity = "1"; // Show image
+  //     startFollow();
       
-      if (activeImage) {
-        image.style.left = activeImage.style.left;
-        image.style.top = activeImage.style.top;
-      }
+  //     if (activeImage) {
+  //       image.style.left = activeImage.style.left;
+  //       image.style.top = activeImage.style.top;
+  //     }
   
-      activeImage = image;
-      align(e); 
-    });
+  //     activeImage = image;
+  //     align(e); 
+  //   });
   
-    el.addEventListener('mouseleave', () => {
-      image.style.opacity = "0"; // Hide image
-      stopFollow();
-    });
-  });
+  //   el.addEventListener('mouseleave', () => {
+  //     image.style.opacity = "0"; // Hide image
+  //     stopFollow();
+  //   });
+  // });
   
   
   
@@ -266,3 +266,20 @@ const buttonEffect = () => {
   }
   goToTop();
   
+  const items = document.querySelectorAll('.awards-wrapper .awards-item');
+  const image = document.querySelector('.gsap-img-animation');
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      image.style.opacity = '1';
+    });
+
+    item.addEventListener('mouseleave', () => {
+      image.style.opacity = '0';
+    });
+
+    item.addEventListener('mousemove', (e) => {
+      image.style.top = `${e.clientY + 10}px`;
+      image.style.left = `${e.clientX + 10}px`;
+    });
+  });   

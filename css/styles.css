@@ -1498,9 +1498,14 @@ blockquote.blockquote-style-1:before {
   object-fit: cover;
   z-index: 2;
   opacity: 0;
-  visibility: hidden;
+  visibility: visible;
   pointer-events: none;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: opacity 0.3s ease;
+}
+
+.awards-wrapper .awards-item .gsap-img-animation:hover{
+  opacity: 1;
 }
 .awards-wrapper .awards-item .marquee-wrapper {
   display: flex;
@@ -9838,4 +9843,23 @@ form.form-dark .form-control:focus {
     }
   }
   
+  #follow-cursor {
+    position: fixed;
+    pointer-events: none; /* ensures it doesn't block clicks */
+    z-index: 9999;
+    transition: transform 0.05s ease-out;
+    width: 50px; /* adjust as needed */
+    height: 50px;
+  }
+  #follow-cursor.swipeimage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 200px;
+    height: auto;
+    opacity: 0;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+  }
   
