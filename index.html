@@ -17,6 +17,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
     rel="stylesheet">
+     <!-- locomotive  -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+/>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
   <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
@@ -26,16 +31,16 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
     rel="stylesheet">
-
+ 
 </head>
 
-<body>
+<body data-scroll-container class="scroll-container">
 
   <div id="cursor">
     <div class="cursor__circle"></div>
   </div>
 
-  <div class="site-content">
+  <div data-scroll-container class="scroll-container site-content">
     <div class="container-fluid">
       <div class="item-efftect">
         <div class="efftect overflow-hidden"></div>
@@ -1058,6 +1063,7 @@
                       </div>
                     </div>
                   </div>
+                  
                   <div class="awards-item">
                     <div class="item-inner">
                       <div class="awards-year">[2024]</div>
@@ -1065,29 +1071,27 @@
                       <h6 class="awards-name">Webflow Design</h6>
                       <div class="awards-action"><a class="btn-arrow" href="#"><svg width="17" height="16"
                             viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_923_143)">
+                            <g clip-path="url(#clip0_923_142)">
                               <path
                                 d="M8.70801 0.959961L9.29825 2.7665C10.2512 5.68321 12.8308 7.77453 15.8928 8.1128C12.8468 8.37564 10.2578 10.4348 9.3276 13.3343L8.70801 15.2657"
                                 stroke="inherit" stroke-width="2" />
                               <path d="M15.7602 8.12158H0.1875" stroke="inherit" stroke-width="2" />
                             </g>
                             <defs>
-                              <clipPath id="clip0_923_143">
+                              <clipPath id="clip0_923_142">
                                 <rect width="15.904" height="14.8437" fill="inherit"
                                   transform="translate(0.1875 0.578125)" />
                               </clipPath>
                             </defs>
                           </svg></a></div>
                     </div>
-                    <div class="awards-image">
-                    </div>
+
+                    <div class="awards-image"><img class="img-fluid gsap-img-animation"
+                        src="Assets/images/awards/good-design-award.png" alt="">
+                      </div>
                     <div class="marquee-wrapper">
                       <div class="marquee-inner">
-                        <div class="marquee-item" data-image="../Assets/blog/01.jpg">
-                          <span class="icon"><img class="img-fluid" src="../Assets/marqueeslider/brand-icon1 (2).png" alt="" /></span>
-                          <span class="title">Web Design</span>
-                        </div>
-                        
+                        <div class="marquee-item">
                           <span class="icon"><img class="img-fluid" src="Assets/homepage/Slider/brand-icon1.png"
                               alt="" /></span>
                           <span class="title">Web Design</span>
@@ -1118,8 +1122,8 @@
                           <span class="title">Web Design</span>
                         </div>
                         <div class="marquee-item">
-                          <span class="icon"><img class="img-fluid"
-                              src="../infinate/Assets/homepage/Slider/brand-icon2.png" alt="" /></span>
+                          <span class="icon"><img class="img-fluid" src="Assets/homepage/Slider/brand-icon2.png"
+                              alt="" /></span>
                           <span class="title">UI/UX Design</span>
                         </div>
                         <div class="marquee-item">
@@ -1370,10 +1374,16 @@
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
   </div>
+  
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="js/homepage3.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- locomotive js  -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+ 
   </script>
+ 
+   <script src="js/script.js"></script>
 </body>
 
 </html>

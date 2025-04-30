@@ -1,116 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modern Homepage</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Orbitron', sans-serif;
-      }
-    </style>
-  </head>
-  <body class="bg-black text-white scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smooth Scroll with Animations</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-      <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-4 text-cyan-400">Welcome to the Future</h1>
-      <p class="text-gray-300 text-lg md:text-xl max-w-xl mb-6">
-        This modern homepage showcases smooth animations, a clean design, and sci-fi vibes.
-      </p>
-      <a href="#about" class="bg-cyan-500 hover:bg-cyan-600 text-black px-6 py-3 rounded-full text-lg transition">
-        Get Started
-      </a>
-    </section>
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: white;
+      position: relative;
+    }
 
-    <!-- About Section -->
-    <section id="about" class="min-h-screen bg-gray-900 flex flex-col justify-center items-center px-6">
-      <h2 class="text-4xl font-bold mb-4 text-cyan-400">About Us</h2>
-      <p class="text-gray-300 text-center max-w-2xl text-lg">
-        We build futuristic, high-performance web experiences using modern technologies like Tailwind, GSAP, and Anime.js.
-      </p>
-    </section>
+    .one { background: #f87171; }
+    .two { background: #34d399; }
+    .three { background: #60a5fa; }
 
-    <!-- Services Section -->
-    <section class="min-h-screen bg-black px-6 py-20">
-      <h2 class="text-4xl text-center font-bold text-cyan-400 mb-12">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center service-box">
-          <h3 class="text-2xl font-semibold text-cyan-300 mb-2">Design</h3>
-          <p class="text-gray-300">Modern and intuitive UI/UX designs tailored to your brand.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center service-box">
-          <h3 class="text-2xl font-semibold text-cyan-300 mb-2">Development</h3>
-          <p class="text-gray-300">Clean, scalable, and high-performance websites and apps.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center service-box">
-          <h3 class="text-2xl font-semibold text-cyan-300 mb-2">Animation</h3>
-          <p class="text-gray-300">Engaging, interactive animations using GSAP and Anime.js.</p>
-        </div>
-      </div>
-    </section>
+    .content {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  </style>
+</head>
+<body>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-center py-6 text-gray-400">
-      &copy; 2025 SciFiWeb. All rights reserved.
-    </footer>
+  <section class="one">
+    <div class="content">Welcome to Section 1</div>
+  </section>
 
-    <!-- Animations -->
-    <script>
-      // Anime.js intro
-      anime({
-        targets: '#hero-title',
-        translateY: [-50, 0],
-        opacity: [0, 1],
-        easing: 'easeOutExpo',
-        duration: 1500
-      });
+  <section class="two">
+    <div class="content">Scroll-Triggered Slide In</div>
+  </section>
 
-      // GSAP scroll animations
-      gsap.registerPlugin(ScrollTrigger);
+  <section class="three">
+    <div class="content">Scale Up Reveal</div>
+  </section>
 
-      gsap.utils.toArray(".service-box").forEach((box, i) => {
-        gsap.from(box, {
-          scrollTrigger: {
-            trigger: box,
-            start: "top 85%",
-            toggleActions: "play none none reset"
-          },
-          opacity: 0,
-          y: 50,
-          duration: 1,
-          delay: i * 0.2,
-          ease: "power3.out"
-        });
-      });
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.35/bundled/lenis.min.js"></script>
 
-      gsap.from("#about h2", {
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initialize Lenis
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      ScrollTrigger.update();
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Animate Section 1 on load
+    gsap.to(".one .content", {
+      duration: 1,
+      y: 0,
+      opacity: 1,
+      ease: "power2.out"
+    });
+
+    // Animate Section 2 on scroll
+    gsap.to(".two .content", {
+      scrollTrigger: {
+        trigger: ".two",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      },
+      duration: 1.2,
+      y: 0,
+      opacity: 1,
+      ease: "power3.out"
+    });
+
+    // Animate Section 3 with scale effect
+    gsap.fromTo(".three .content", 
+      { scale: 0.5, opacity: 0 },
+      {
         scrollTrigger: {
-          trigger: "#about",
-          start: "top 90%",
+          trigger: ".three",
+          start: "top 80%",
+          toggleActions: "play none none reverse"
         },
-        opacity: 0,
-        y: 40,
         duration: 1,
+        scale: 1,
+        opacity: 1,
         ease: "back.out(1.7)"
-      });
-
-      gsap.from("#about p", {
-        scrollTrigger: {
-          trigger: "#about",
-          start: "top 85%",
-        },
-        opacity: 0,
-        y: 20,
-        duration: 1.2,
-        delay: 0.3,
-        ease: "power2.out"
-      });
-    </script>
-  </body>
+      }
+    );
+  </script>
+</body>
 </html>

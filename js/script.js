@@ -1,83 +1,77 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Dropdown Menu
-    function dropdownMenu() {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            document.querySelectorAll('.dropdown-menu a.dropdown-toggle').forEach(item => {
-                item.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const subMenu = this.nextElementSibling;
-
-                    if (!subMenu.classList.contains('show')) {
-                        document.querySelectorAll('.dropdown-menu .show').forEach(el => el.classList.remove('show'));
-                    }
-
-                    subMenu.classList.toggle('show');
-
-                    const parentDropdown = this.closest('li.nav-item.dropdown.show');
-                    if (parentDropdown) {
-                        parentDropdown.addEventListener('hidden.bs.dropdown', function () {
-                            document.querySelectorAll('.dropdown-submenu .show').forEach(el => el.classList.remove('show'));
-                        });
-                    }
-                });
-            });
-        }
-    }
-
-    // Add Class to Menu
-    function menuAddClass() {
-        const topMenu = document.querySelector('.top-menu');
-        if (topMenu) {
-            topMenu.addEventListener('click', function () {
-                document.querySelector('.nav-menu').classList.toggle('open-menu');
-            });
-        }
-    }
-
-    // Toggle Menu
-    function menuToggle() {
-        document.querySelectorAll('.menu-overlay-offcanvas .navbar-nav .nav-link').forEach(item => {
-            item.addEventListener('click', function () {
-                const dropdownMenu = this.nextElementSibling;
-                if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
-                    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    // ====== BUTTON MAGNET EFFECT ======
+    const buttonEffect = () => {
+        const buttons = document.querySelectorAll('.btn-effect');
+        buttons.forEach(button => {
+            button.addEventListener('mousemove', (event) => {
+                const rect = button.getBoundingClientRect();
+                const x = event.clientX - rect.left - rect.width / 2;
+                const y = event.clientY - rect.top - rect.height / 2;
+                const distance = Math.sqrt(x * x + y * y);
+                if (distance < 70) {
+                    button.style.transform = `translate(${x / 3}px, ${y / 3}px)`;
                 }
             });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translate(0, 0)';
+            });
         });
+    };
+    buttonEffect();
+
+    // ====== CUSTOM CURSOR FOLLOW EFFECT ======
+    const cursor = document.querySelector('#cursor');
+    const cursorCircle = cursor?.querySelector('.cursor__circle');
+    const mouse = { x: -100, y: -100 };
+    const pos = { x: 0, y: 0 };
+    const speed = 0.1;
+
+    window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    function updateCursor() {
+        const dx = mouse.x - pos.x;
+        const dy = mouse.y - pos.y;
+        pos.x += dx * speed;
+        pos.y += dy * speed;
+        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const squeeze = Math.min(dist / 1500, 0.15);
+        if (cursor && cursorCircle) {
+            cursor.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
+            cursorCircle.style.transform = `rotate(${angle}deg) scale(${1 + squeeze}, ${1 - squeeze})`;
+        }
+        requestAnimationFrame(updateCursor);
+    }
+    updateCursor();
+
+    // Hide cursor in awards section
+    const awardsSection = document.querySelector('.awards-image');
+    if (awardsSection && cursor) {
+        awardsSection.addEventListener('mouseenter', () => cursor.style.opacity = '0');
+        awardsSection.addEventListener('mouseleave', () => cursor.style.opacity = '1');
     }
 
-    // Accordion
-    const accordionHeaders = document.querySelectorAll(".accordion-header");
-    accordionHeaders.forEach(header => {
-        header.addEventListener("click", function () {
-            const content = this.nextElementSibling;
-            this.classList.toggle("active");
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                document.querySelectorAll(".accordion-content").forEach(item => item.style.maxHeight = null);
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
+    // Cursor modifiers
+    document.querySelectorAll('[data-cursor-type]').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor?.classList.add(el.dataset.cursorType);
+            cursor?.setAttribute('data-cursor-text', el.dataset.customText || 'Drag');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor?.classList.remove(el.dataset.cursorType);
+            cursor?.removeAttribute('data-cursor-text');
         });
     });
 
-    // Offcanvas Sidebar
-    const sidebarBtn = document.querySelector('.sidebar-btn');
-    const closeBtns = document.querySelectorAll('.offcanvas-sidebar .btn-close, .offcanvas-backdrop');
-    if (sidebarBtn) {
-        sidebarBtn.addEventListener('click', function () {
-            document.querySelector('.offcanvas-sidebar').classList.add('active');
-        });
-        closeBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
-                document.querySelector('.offcanvas-sidebar').classList.remove('active');
-            });
-        });
-    }
+    document.querySelectorAll('a:not(.cursor-style)').forEach(link => {
+        link.addEventListener('mouseenter', () => cursor?.classList.add('cursor-link'));
+        link.addEventListener('mouseleave', () => cursor?.classList.remove('cursor-link'));
+    });
 
-    // Owl Carousel
+    // ====== OWL CAROUSEL ======
     $(".owl-carousel").owlCarousel({
         loop: true,
         margin: 10,
@@ -93,14 +87,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Back to Top
-    function goToTop() {
-        const progressPath = document.querySelector('.back-to-top path');
-        const pathLength = progressPath.getTotalLength();
+    // ====== ACCORDION ======
+    document.querySelectorAll(".accordion-header").forEach(header => {
+        header.addEventListener("click", () => {
+            const content = header.nextElementSibling;
+            header.classList.toggle("active");
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
 
+    // ====== BACK TO TOP ======
+    const progressPath = document.querySelector('.back-to-top path');
+    const pathLength = progressPath?.getTotalLength();
+
+    if (progressPath) {
         progressPath.style.transition = 'none';
-        progressPath.style.strokeDasharray = pathLength;
+        progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
         progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = 'stroke-dashoffset 10ms linear';
 
         const updateProgress = () => {
             const scroll = $(window).scrollTop();
@@ -123,120 +132,50 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        $('.back-to-top').on('click', function (e) {
-            e.preventDefault();
+        $('.back-to-top').on('click', function (event) {
+            event.preventDefault();
             $('html, body').animate({ scrollTop: 0 }, duration);
             return false;
         });
-    }
-    goToTop();
+    };
 
-    // Cursor Effect
-    const cursor = document.querySelector('#cursor');
-    const cursorCircle = cursor?.querySelector('.cursor__circle');
-    const mouse = { x: -100, y: -100 };
-    const pos = { x: 0, y: 0 };
-    const speed = 0.1;
+    // ====== COUNTER ANIMATION ======
+    const counters = document.querySelectorAll('.value');
+    const speeds = 2000;
 
-    window.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
+    counters.forEach(counter => {
+        const animate = () => {
+            const value = +counter.getAttribute('akhi');
+            const data = +counter.innerText;
+            const time = value / speeds;
+            if (data < value) {
+                counter.innerText = Math.ceil(data + time);
+                setTimeout(animate, 1);
+            } else {
+                counter.innerText = value;
+            }
+        };
+        animate();
     });
 
-    function getAngle(dx, dy) {
-        return Math.atan2(dy, dx) * 180 / Math.PI;
-    }
+    // ====== AWARDS IMAGE MOUSE MOVE ======
+    const items = document.querySelectorAll('.awards-wrapper .awards-item');
+    const image = document.querySelector('.gsap-img-animation');
 
-    function getSqueeze(dx, dy) {
-        const distance = Math.sqrt(dx ** 2 + dy ** 2);
-        return Math.min(distance / 1500, 0.15);
-    }
-
-    function updateCursor() {
-        const dx = mouse.x - pos.x;
-        const dy = mouse.y - pos.y;
-        pos.x += dx * speed;
-        pos.y += dy * speed;
-        const angle = getAngle(dx, dy);
-        const squeeze = getSqueeze(dx, dy);
-        const scale = `scale(${1 + squeeze}, ${1 - squeeze})`;
-        const rotate = `rotate(${angle}deg)`;
-        const translate = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
-
-        if (cursor && cursorCircle) {
-            cursor.style.transform = translate;
-            cursorCircle.style.transform = rotate + scale;
-        }
-    }
-
-    function loop() {
-        updateCursor();
-        requestAnimationFrame(loop);
-    }
-    requestAnimationFrame(loop);
-
-    // Cursor Modifier
-    document.querySelectorAll('[data-cursor-type]').forEach(modifier => {
-        modifier.addEventListener('mouseenter', function () {
-            const className = this.getAttribute('data-cursor-type');
-            const text = this.getAttribute('data-custom-text') || 'Drag';
-            cursor?.classList.add(className);
-            cursor?.setAttribute('data-cursor-text', text);
+    items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            if (image) image.style.opacity = '1';
         });
-        modifier.addEventListener('mouseleave', function () {
-            const className = this.getAttribute('data-cursor-type');
-            cursor?.classList.remove(className);
-            cursor?.removeAttribute('data-cursor-text');
+
+        item.addEventListener('mouseleave', () => {
+            if (image) image.style.opacity = '0';
         });
-    });
 
-    document.querySelectorAll('a:not(.cursor-style)').forEach(link => {
-        link.addEventListener('mouseenter', () => cursor?.classList.add('cursor-link'));
-        link.addEventListener('mouseleave', () => cursor?.classList.remove('cursor-link'));
-    });
-
-    // Button Effect
-    document.querySelectorAll('.btn-effect').forEach(button => {
-        button.addEventListener('mousemove', (e) => {
-            const rect = button.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            const proximity = 70;
-            const magnetism = 3;
-            const distance = Math.sqrt(x * x + y * y);
-
-            if (distance < proximity) {
-                button.style.transform = `translate(${x / magnetism}px, ${y / magnetism}px)`;
+        item.addEventListener('mousemove', (e) => {
+            if (image) {
+                image.style.top = `${e.clientY + 10}px`;
+                image.style.left = `${e.clientX + 10}px`;
             }
         });
-
-        button.addEventListener('mouseleave', () => {
-            button.style.transform = 'translate(0, 0)';
-        });
     });
-
-    // Number Counter
-    let upto = 90;
-    let counter = document.getElementById("counter");
-    if (counter) {
-        let counts = setInterval(() => {
-            upto++;
-            counter.setAttribute("data-count", upto);
-            counter.innerHTML = upto;
-            if (upto === 100) clearInterval(counts);
-        }, 10);
-    }
-
-    function increase() {
-        const SPEED = 40;
-        const value1 = document.getElementById("value1");
-        const limit = parseInt(value1?.innerHTML || "0", 10);
-        for (let i = 0; i <= limit; i++) {
-            setTimeout(() => {
-                if (value1) value1.innerHTML = i + "%";
-            }, SPEED * i);
-        }
-    }
-    increase();
-});
-
+})
