@@ -13,12 +13,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link
-      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
-      rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
@@ -77,39 +77,39 @@
 
     </div>
     <script>
-      function countdownTimerFunction() {
-  const targetDate = new Date('09/14/2025 12:00:00').getTime();
-  const offset = -4 * 60 * 60 * 1000; 
+        function countdownTimerFunction() {
+            const targetDate = new Date('09/14/2025 12:00:00').getTime();
+            const offset = -4 * 60 * 60 * 1000;
 
-  function updateTimer() {
-    const now = new Date().getTime();
-    const adjustedTime = now + offset;
-    const distance = targetDate - adjustedTime;
+            function updateTimer() {
+                const now = new Date().getTime();
+                const adjustedTime = now + offset;
+                const distance = targetDate - adjustedTime;
 
-    if (distance < 0) {
-      document.querySelector(".coming-soon-title").textContent = "We're Live!";
-      return;
-    }
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                if (distance < 0) {
+                    document.querySelector(".coming-soon-title").textContent = "We're Live!";
+                    return;
+                }
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.querySelector(".countdown .days").textContent = days.toString().padStart(2, '0');
-    document.querySelector(".countdown .hours").textContent = hours.toString().padStart(2, '0');
-    document.querySelector(".countdown .minutes").textContent = minutes.toString().padStart(2, '0');
-    document.querySelector(".countdown .seconds").textContent = seconds.toString().padStart(2, '0');
-  }
-  updateTimer();
-  setInterval(updateTimer, 1000); 
-}
-countdownTimerFunction();
+                document.querySelector(".countdown .days").textContent = days.toString().padStart(2, '0');
+                document.querySelector(".countdown .hours").textContent = hours.toString().padStart(2, '0');
+                document.querySelector(".countdown .minutes").textContent = minutes.toString().padStart(2, '0');
+                document.querySelector(".countdown .seconds").textContent = seconds.toString().padStart(2, '0');
+            }
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+        countdownTimerFunction();
     </script>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/jquery.appear.js"></script>
+
     <script src="js/popper/popper.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
-   
 </body>
 
 </html>
