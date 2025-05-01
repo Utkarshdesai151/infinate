@@ -6,7 +6,7 @@ body {
   color: #D4D6D7;
   overflow-x: hidden;
   background-color: #000000;
-  /* scroll-behavior: smooth; */
+  /* scroll-behavior: smoot` h; */
 
 }
 a {
@@ -5262,19 +5262,23 @@ form.form-dark .form-control:focus {
 
 .header-3 .site-menu .main-menu .nav-item.active > a {
   color: #77BEFF;
+  position: relative;
 }
 
-.header-3 .site-menu .main-menu .nav-item.active > a:before,
-.header-3 .site-menu .main-menu .nav-item:hover > a:before {
+
+.header-3 .site-menu .main-menu .nav-item.active > a::before,
+.header-3 .site-menu .main-menu .nav-item:hover > a::before {
   content: "";
-  background-image: url(../images/menu-hover.png);
-  height: 8px;
+  display: block;
   position: absolute;
   bottom: 0;
-  left: -5px;
-  right: 0;
-  background-position: center center;
+  left: 0;
+  width: 100%; /* Stretch across link */
+  height: 8px;
+  background-image: url("../css/menu-hover.png");
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
   transition: all 0.3s ease-in-out;
 }
 
@@ -5312,6 +5316,7 @@ form.form-dark .form-control:focus {
 
 .header-3 .site-menu .main-menu .submenu li a.active {
   color: #77BEFF;
+  
 }
 
 .header-3 .site-menu .main-menu .submenu li.active > a {

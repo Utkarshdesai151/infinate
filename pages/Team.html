@@ -253,7 +253,7 @@
                 <div class="team-boxs grid-wrapper grid-xl-4 grid-lg-3 grid-md-2 grid-sm-2 grid-xs-1">
                   <div class="team-item team-style-1">
                     <div class="team-img">
-                      <img class="img-fluid" src="/Assets/team/01.jpg" alt="" />
+                      <img class="img-fluid" src="../Assets/team/01.jpg" alt="" />
                       <div class="image-overlay"><img class="img-fluid" src="../Assets/team/symbol.png" alt="" /></div>
                     </div>
                     <div class="team-info">
@@ -271,7 +271,7 @@
                   </div>
                   <div class="team-item team-style-1">
                     <div class="team-img">
-                      <img class="img-fluid" src="/Assets/team/02.jpg" alt="" />
+                      <img class="img-fluid" src="../Assets/team/02.jpg" alt="" />
                       <div class="image-overlay"><img class="img-fluid" src="../Assets/team/symbol.png" alt="" /></div>
                     </div>
                     <div class="team-info">
@@ -615,49 +615,12 @@
         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
       </svg>
     </div>
-    <script src="/infinate/js/script.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="../js/effects.js"></script>
     <script src="../js/script.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
-          loop: true,
-          margin: 10,
-          nav: false,
-          dots: false,
-          autoplay: true,
-          autoplayTimeout: 4000,
-          autoplayHoverPause: false,
-          responsive: {
-            0: { items: 1 },
-            800: { items: 2 },
-            1100: { items: 3 }
-          }
-        });
-      });
 
-      document.addEventListener("DOMContentLoaded", function () {
-
-        const accordionHeaders = document.querySelectorAll(".accordion-header");
-
-        accordionHeaders.forEach(header => {
-          header.addEventListener("click", function () {
-            const content = this.nextElementSibling;
-
-
-            this.classList.toggle("active");
-
-            if (content.style.maxHeight) {
-              content.style.maxHeight = null;
-            } else {
-              content.style.maxHeight = content.scrollHeight + "px";
-            }
-          });
-        });
-      });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
 </body>
 
 </html>
