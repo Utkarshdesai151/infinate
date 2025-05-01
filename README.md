@@ -1,4 +1,5 @@
-### IT Infinite - Modern IT Solutions and Services Website Template(self practice project,used theme forest website to recrate as it is )
+##
+IT Infinite - Modern IT Solutions and Services Website Template(self practice project,used theme forest website to recrate as it is )
 
 🚀 A fully responsive and professionally designed website built using **HTML5**, **CSS3**, **JavaScript**, and **Bootstrap 5**.  
 Inspired by the [IT Infinite ThemeForest Template](https://preview.themeforest.net/item/it-infinite-it-solutions-and-services-company-html5-template/full_screen_preview/53041088).
